@@ -1,0 +1,20 @@
+course: btc101
+section: 1
+chapter: 2
+difficulty: intermediate
+duration: 30
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - DigiCash
+  - Cryptocurrency
+question: What was the "DigiCash" project?
+answer: An attempt to create anonymous electronic money by David Chaum.
+wrong_answers:
+  - A project to create a digital wallet for Bitcoin.
+  - A project to digitize all physical cash.
+  - A project to create a new form of cryptocurrency.
+explanation: >-
+  David Chaum introduced the concept of "anonymous electronic money" with
+  his project "DigiCash" in the 1980s.
+reviewed: false

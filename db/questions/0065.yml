@@ -1,0 +1,22 @@
+course: btc101
+section: 2
+chapter: 4
+difficulty: intermediate
+duration: 30
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Node
+  - Command
+question: What is the command to verify the quantity of bitcoins in circulation on
+  a Bitcoin node?
+answer: bitcoin-cli gettxoutsetinfo
+wrong_answers:
+  - bitcoin-cli getblockchaininfo
+  - bitcoin-cli getwalletinfo
+  - bitcoin-cli getnetworkinfo
+explanation: >-
+  The command to verify the quantity of bitcoins in circulation on a Bitcoin
+  node is `bitcoin-cli gettxoutsetinfo`. This command provides transparency and verifiability,
+  strengthening trust in the Bitcoin system.
+reviewed: false

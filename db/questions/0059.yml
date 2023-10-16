@@ -1,0 +1,22 @@
+course: btc101
+section: 2
+chapter: 3
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Hyperinflation
+  - Zimbabwe
+  - Zimbabwean Dollar
+question: What happened to the Zimbabwean dollar in April 2009?
+answer: The Minister of Finance announced the suspension of the Zimbabwean dollar
+  and authorized the use of different foreign currencies for trade.
+wrong_answers:
+  - The Zimbabwean dollar collapsed by over 72%.
+  - The government agreed to compensate war veterans for an amount equivalent to 450
+    million US dollars.
+  - The government had to resort to running the printing press.
+explanation: >-
+  In April 2009, the Minister of Finance announced the suspension of the
+  Zimbabwean dollar and authorized the use of different foreign currencies for trade.
+reviewed: false

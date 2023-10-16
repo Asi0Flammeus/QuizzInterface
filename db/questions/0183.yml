@@ -1,0 +1,21 @@
+course: btc101
+section: 5
+chapter: 1
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Cryptocurrency
+  - Dark Web
+question: What is one of the reasons the use of Bitcoin expanded to dark web marketplaces
+  like Silk Road?
+answer: Its uncontrollable and pseudonymous nature.
+wrong_answers:
+  - Its centralized control.
+  - Its traceability.
+  - Its lack of pseudonymity.
+explanation: >-
+  The use of Bitcoin expanded to dark web marketplaces like Silk Road due
+  to its uncontrollable and pseudonymous nature.
+reviewed: false

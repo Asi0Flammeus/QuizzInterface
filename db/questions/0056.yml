@@ -1,0 +1,20 @@
+course: btc101
+section: 2
+chapter: 3
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Hyperinflation
+  - Germany
+  - Inflation Rate
+question: What was the inflation rate in Germany in October 1923?
+answer: 29,500%.
+wrong_answers:
+  - 20.9%.
+  - 50%.
+  - 100%.
+explanation: >-
+  The month with the highest inflation in Germany was October 1923, peaking
+  at 29,500%.
+reviewed: false

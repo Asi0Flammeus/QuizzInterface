@@ -1,0 +1,20 @@
+course: btc101
+section: 2
+chapter: 3
+difficulty: easy
+duration: 15
+author: DecouvreBitcoin
+tags:
+  - Hyperinflation
+  - Monetary Decisions
+  - Central Bankers
+question: What is the direct consequence of hyperinflation?
+answer: False monetary decisions made by central bankers and politicians.
+wrong_answers:
+  - Capitalism.
+  - Political opponents.
+  - Magic.
+explanation: >-
+  Hyperinflation is the direct consequence of false monetary decisions
+  made by central bankers and politicians.
+reviewed: false

@@ -1,0 +1,19 @@
+course: btc101
+section: 4
+chapter: 3
+difficulty: easy
+duration: 15
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Blockchain
+  - Nodes
+question: What is the size of the Bitcoin blockchain?
+answer: About 500GB
+wrong_answers:
+  - About 100GB
+  - About 1TB
+  - About 2TB
+explanation: >-
+  The Bitcoin blockchain is about 500GB in size.
+reviewed: false

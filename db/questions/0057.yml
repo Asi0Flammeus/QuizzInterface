@@ -1,0 +1,20 @@
+course: btc101
+section: 2
+chapter: 3
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Hyperinflation
+  - Hungary
+  - Inflation Rate
+question: What was the inflation rate in Hungary in July 1946?
+answer: 41,900,000,000,000,000%.
+wrong_answers:
+  - 207%.
+  - 50%.
+  - 100%.
+explanation: >-
+  The month with the highest inflation in Hungary was July 1946, with a
+  price inflation of 41,900,000,000,000,000%.
+reviewed: false

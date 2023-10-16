@@ -1,0 +1,20 @@
+course: btc101
+section: 3
+chapter: 1
+difficulty: intermediate
+duration: 30
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Wallets
+  - Public Key
+question: What is the role of the public key in a Bitcoin wallet?
+answer: It is used to generate Bitcoin addresses and thus receive money
+wrong_answers:
+  - It is used to encrypt the Bitcoin transactions
+  - It is used to access the Bitcoin wallet
+  - It is used to represent ownership of the Bitcoins
+explanation: >-
+  The public key is created with the private key and therefore linked to
+  it. The public key is used to generate Bitcoin addresses and thus receive money.
+reviewed: false

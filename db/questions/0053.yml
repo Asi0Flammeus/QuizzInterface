@@ -1,0 +1,20 @@
+course: btc101
+section: 2
+chapter: 3
+difficulty: intermediate
+duration: 30
+author: DecouvreBitcoin
+tags:
+  - Inflation
+  - Purchasing Power
+  - Savings
+question: What is the impact of 20% inflation on purchasing power over 3 years?
+answer: You lose almost half of your purchasing power.
+wrong_answers:
+  - You lose 20% of your purchasing power.
+  - You lose 60% of your purchasing power.
+  - You lose 30% of your purchasing power.
+explanation: >-
+  With 20% inflation, you lose almost half of your purchasing power in
+  3 years.
+reviewed: false

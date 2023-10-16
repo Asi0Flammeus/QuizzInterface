@@ -1,0 +1,19 @@
+course: btc101
+section: 6
+chapter: 3
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Banking system
+question: What is one of the main implications of Bitcoin for the banking system?
+answer: It allows for the emancipation from the banking system.
+wrong_answers:
+  - It allows for the control of the banking system.
+  - It allows for the elimination of the banking system.
+  - It allows for the corruption of the banking system.
+explanation: >-
+  The text mentions that Bitcoin allows for the emancipation from the banking
+  system.
+reviewed: false

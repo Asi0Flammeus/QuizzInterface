@@ -1,0 +1,20 @@
+course: btc101
+section: 2
+chapter: 1
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Gold
+  - Currency
+question: What is the main disadvantage of gold as a currency?
+answer: It's not easily divisible or transportable over long distances
+wrong_answers:
+  - It's not valuable enough
+  - It's too common
+  - It's not accepted by most countries
+explanation: >-
+  While gold meets many criteria of an efficient currency, it is not easily
+  divisible or transportable over long distances. These flaws have made gold a store
+  of value, but not a common currency.
+reviewed: false

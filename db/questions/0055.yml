@@ -1,0 +1,19 @@
+course: btc101
+section: 2
+chapter: 3
+difficulty: intermediate
+duration: 30
+author: DecouvreBitcoin
+tags:
+  - Hyperinflation
+  - Phases
+  - Currency Collapse
+question: What is the second phase of hyperinflation?
+answer: Currency collapse & price increase.
+wrong_answers:
+  - Loss of Confidence.
+  - The vicious circle of money printing.
+  - A new currency emerges.
+explanation: >-
+  The second phase of hyperinflation is currency collapse & price increase.
+reviewed: false

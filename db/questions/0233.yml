@@ -1,0 +1,18 @@
+course: btc101
+section: 6
+chapter: 1
+difficulty: hard
+duration: 45
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Blockchain
+question: What is the block size in the Bitcoin protocol?
+answer: 1MB
+wrong_answers:
+  - 0.5MB
+  - 2MB
+  - 3MB
+explanation: >-
+  The block size in the Bitcoin protocol is 1MB.
+reviewed: false

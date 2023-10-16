@@ -1,0 +1,21 @@
+course: btc101
+section: 4
+chapter: 5
+difficulty: intermediate
+duration: 30
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Environment
+  - Green energy
+question: How can Bitcoin potentially help with the ecological transition?
+answer: It promotes the use of green energy
+wrong_answers:
+  - It reduces the production of goods
+  - It regulates the consumption of resources
+  - It limits the emission of greenhouse gases
+explanation: >-
+  Bitcoin promotes the use of green energy, which can potentially help
+  with the ecological transition. For example, the flames in oil wells, which burn
+  methane to prevent pollution, can be extinguished by Bitcoin miners.
+reviewed: false

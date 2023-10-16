@@ -1,0 +1,20 @@
+course: btc101
+section: 3
+chapter: 4
+difficulty: easy
+duration: 15
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Security
+question: What is one method to secure your bitcoins in the long term?
+answer: Engrave your mnemonic phrase on a resistant material like steel
+wrong_answers:
+  - Store them in a digital wallet
+  - Keep them on an exchange platform
+  - Share your mnemonic phrase with a trusted friend
+explanation: >-
+  Engraving your mnemonic phrase on a resistant material like steel creates
+  a physical backup of your keys that is resistant to both water damage and fire,
+  thus securing your bitcoins in the long term.
+reviewed: false

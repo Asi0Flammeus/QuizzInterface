@@ -1,0 +1,20 @@
+course: btc101
+section: 5
+chapter: 4
+difficulty: easy
+duration: 15
+author: DecouvreBitcoin
+tags:
+  - Bitcoin
+  - Multidisciplinary
+question: What is Bitcoin described as in the text?
+answer: A multidisciplinary object
+wrong_answers:
+  - A simple object
+  - A complex object
+  - A single-disciplinary object
+explanation: >-
+  Bitcoin is described as a multidisciplinary object because it raises
+  questions related to various fields, including cryptography, game theory, economics
+  and monetary policy, computer science, philosophy, energy, laws, and regulation.
+reviewed: false
