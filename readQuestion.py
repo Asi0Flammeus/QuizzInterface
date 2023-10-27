@@ -16,21 +16,21 @@ def index():
     # Verificar si se ha presionado el botón 2 y actualizar el índice
     if request.method == 'POST':
         if request.form.get('button1'):
-            print('anterior')
+            print('Previous')
             global current_question_index
             current_question_index -= 1
             # Asegurarse de no superar los límites de la lista
             if current_question_index == 0:
                 current_question_index = 0
         elif request.form.get('button2'):
-            print('siguiente')
+            print('Next')
             current_question_index
             current_question_index += 1
             # Asegurarse de no superar los límites de la lista
             if current_question_index >= len(questions):
                 current_question_index = 0
         elif request.form.get('button3'):
-            print('Guardar')
+            print('Save')
             actual_yaml = os.path.join(directorio_db, questions[current_question_index])
             with open(actual_yaml, 'w') as w:
                 new_data = {
@@ -54,7 +54,7 @@ def index():
     with open(archivo_yaml, 'r') as f:
         data = yaml.safe_load(f)
 
-    return render_template('pregunta.html',
+    return render_template('review_question.html',
                            archivo_yaml=archivo_yaml,
                            course=data['course'],
                            section=data['section'],
