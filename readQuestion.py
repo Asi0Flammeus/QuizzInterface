@@ -9,7 +9,7 @@ current_question_index = 0
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    directorio_db = "/home/bitcoin/Desktop/ReadQuestion/db/questions/"
+    directorio_db = "./db/questions/"
     questions = os.listdir(directorio_db)
     questions.sort()
 
@@ -52,7 +52,7 @@ def index():
 
     archivo_yaml = os.path.join(directorio_db, questions[current_question_index])
     with open(archivo_yaml, 'r') as f:
-        data = yaml.load(f)
+        data = yaml.safe_load(f)
 
     return render_template('pregunta.html',
                            archivo_yaml=archivo_yaml,
