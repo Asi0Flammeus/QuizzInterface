@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Reviewed: {{reviewed}}</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+        <form method="post" action="/">
+            <label class="text-black-50">course: </label>
+            <textarea name="course" type="text" class="text-primary">{{course}}</textarea>
+            
+            <label class="text-black-50">section: </label>    
+            <textarea name="section" type="text">{{section}}</textarea>
+    
+            <label class="text-black-50">duration: </label>    
+            <textarea name="duration" type="text">{{duration}}</textarea></br>
+            
+            <label class="text-black-50">author</label></br>    
+            <textarea name="author" type="text" class="border border-secondary-subtle margin-top ">{{author}}</textarea></br>
+            <textarea name="chapter" type="text" class="border border-secondary-subtle margin-top ">{{chapter}}</textarea></br>
+            <textarea name="difficulty" type="text" class="border border-secondary-subtle margin-top ">{{difficulty}}</textarea></br>
+            <textarea name="duration" type="text" class="border border-secondary-subtle margin-top ">{{duration}}</textarea></br>
+            {% for tag in tags%}
+            <label>tags</label>
+            <textarea name="tag" type="text" rows="3"  cols="50" class="border border-secondary-subtle">{{tag}}</textarea></br>
+            {%endfor%}
+            </br>
+            <label>Reviewed</label>
+            <textarea name="reviewed">{{reviewed}}</textarea>
+            </br>
+
+            <label class="text-black-50">Question {{archivo_yaml}}</label></br>
+            <textarea  name="question" type="text" rows="3"  cols="50" class="border border-secondary-subtle">{{question}}</textarea></br>
+           
+            <label>Right answer</label>
+            <textarea name="answer" type="text" rows="3"  cols="50" class="border border-secondary-subtle">{{answer}}</textarea></br>
+
+            {% for wrong_answer in wrong_answers%}
+              <label>wrong answer</label>
+              <textarea name="wrong_answer" type="text" rows="3"  cols="50" class="border border-secondary-subtle">{{wrong_answer}}</textarea></br>
+            {%endfor%}
+            
+            <label>explanation</label>
+            <textarea name="explanation" type="text" rows="3"  cols="50" class="border border-secondary-subtle">{{explanation}}</textarea></br></br>
+            <button type="submit" name="button1" value="button1" class="btn btn-success">Anterior</button>
+            <button type="submit" name="button2" value="button2" class="btn btn-success">Siguiente</button>
+            <button type="submit" name="button3" value="button3" class="btn btn-primary">Guardar</button>
+
+       </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
