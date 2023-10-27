@@ -117,9 +117,9 @@
                 <div class="form-group">
                     <label>Reviewed</label>
                     <div>
-                        <input type="radio" id="reviewedTrue" name="reviewed" value="True">
+                        <input type="radio" id="reviewedTrue" name="reviewed" value="True" {% if reviewed == 'True' %}checked{% endif %}>
                         <label for="reviewedTrue">True</label>
-                        <input type="radio" id="reviewedFalse" name="reviewed" value="False">
+                        <input type="radio" id="reviewedFalse" name="reviewed" value="False" {% if reviewed == 'False' %}checked{% endif %}>
                         <label for="reviewedFalse">False</label>
                     </div>
                 </div>
