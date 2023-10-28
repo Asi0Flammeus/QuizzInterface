@@ -52,9 +52,12 @@ A Flask web application that provides an interface to review and edit quiz quest
 Visit `http://127.0.0.1:5000/` in your browser to access the QuizzReviewInterface.
 
 ## Usage
-
-- Browse to the main page and navigate through quiz questions using the provided buttons.
-- Edit question details and save changes as needed.
+- Extract your yaml question files in a folder called `questions/` within `QuizzReviewInterface`
+- Activate virtual environment (`source env/bin/activate`)
+- Run the app (`python3 app.py`)
+- Open your browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+- Review by editing question details and saving changes as needed.
+- Navigate through your quiz questions using the provided buttons (modification are saved when you go to next/previous question).
 
 ## Contributing
 
