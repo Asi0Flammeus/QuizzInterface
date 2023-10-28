@@ -5,71 +5,71 @@ import yaml
 app = Flask(__name__)
 
 # Declare a global variable for the current question index
-current_question_index = 0
+QUESTION_INDEX = 0
 
 def save_changes():
     """Save changes to the current YAML file."""
-    global current_question_index, directorio_db, questions
-    actual_yaml = os.path.join(directorio_db, questions[current_question_index])
-    with open(actual_yaml, 'w') as w:
+    global QUESTION_INDEX, quizz_directory, questions
+    yaml_path = os.path.join(quizz_directory, questions[QUESTION_INDEX])
+    with open(yaml_path, 'w') as w:
         new_data = {
             'course': request.form['course'],
-            'section': request.form['section'],
-            'chapter': request.form['chapter'],
+            'section': int(request.form['section']),
+            'chapter': int(request.form['chapter']),
             'difficulty': request.form['difficulty'],
-            'duration': request.form['duration'],
+            'duration': int(request.form.get('duration', '15')),
             'author': request.form['author'],
             'tags': request.form.getlist('tag'),
             'question': request.form['question'],
             'answer': request.form['answer'],
             'wrong_answers': request.form.getlist('wrong_answer'),
             'explanation': request.form['explanation'],
-            'reviewed': request.form.get('reviewed', 'False')
+            'reviewed': request.form.get('reviewed') == 'True'
         }
-        yaml.dump(new_data, w)
+        yaml.dump(new_data, w, default_flow_style=False, indent=2)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global current_question_index, directorio_db, questions
+    global QUESTION_INDEX, quizz_directory, questions
 
-    directorio_db = "./db/questions/"
-    questions = os.listdir(directorio_db)
+    quizz_directory = "./questions/"
+    questions = os.listdir(quizz_directory)
     questions.sort()
 
     if request.method == 'POST':
         if request.form.get('button1'):  # Previous button
-            save_changes()  # Save before moving
-            current_question_index -= 1
-            if current_question_index < 0:
-                current_question_index = len(questions) - 1
+            save_changes()
+            QUESTION_INDEX -= 1
+            if QUESTION_INDEX < 0:
+                QUESTION_INDEX = len(questions) - 1
 
         elif request.form.get('button2'):  # Next button
-            save_changes()  # Save before moving
-            current_question_index += 1
-            if current_question_index >= len(questions):
-                current_question_index = 0
+            save_changes()
+            QUESTION_INDEX += 1
+            if QUESTION_INDEX >= len(questions):
+                QUESTION_INDEX = 0
 
         elif request.form.get('button3'):  # Save button
             save_changes()
 
-    archivo_yaml = os.path.join(directorio_db, questions[current_question_index])
-    with open(archivo_yaml, 'r') as f:
+    yaml_path = os.path.join(quizz_directory, questions[QUESTION_INDEX])
+    with open(yaml_path, 'r') as f:
         data = yaml.safe_load(f)
 
     return render_template('review_question.html',
-                           archivo_yaml=archivo_yaml,
+                           QUESTION_INDEX=QUESTION_INDEX,
                            course=data['course'],
                            section=data['section'],
                            chapter=data['chapter'],
                            difficulty=data['difficulty'],
-                           duration=data['duration'],
+                           duration=int(data['duration']),
                            author=data['author'],
                            tags=data['tags'],
                            question=data['question'],
                            answer=data['answer'],
                            wrong_answers=data['wrong_answers'],
                            explanation=data['explanation'],
-                           reviewed=data['reviewed']
+                           reviewed=bool(data['reviewed'])
                            )
 
 if __name__ == '__main__':

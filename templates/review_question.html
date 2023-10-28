@@ -76,8 +76,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="duration">Duration</label>
-                    <textarea id="duration" name="duration" class="form-control">{{duration}}</textarea>
+                    <label>Duration</label>
+                    <div>
+                        <input type="radio" id="duration15" name="duration" value="15" {% if duration == 15 %}checked{% endif %}>
+                        <label for="duration15">15</label>
+
+                        <input type="radio" id="duration30" name="duration" value="30" {% if duration == 30 %}checked{% endif %}>
+                        <label for="duration30">30</label>
+
+                        <input type="radio" id="duration45" name="duration" value="45" {% if duration == 45 %}checked{% endif %}>
+                        <label for="duration45">45</label>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -102,7 +111,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="question">Question {{archivo_yaml}}</label>
+                    <label for="question">Question {{QUESTION_INDEX}}</label>
                     <textarea id="question" name="question" class="form-control">{{question}}</textarea>
                 </div>
 
@@ -126,9 +135,9 @@
                 <div class="form-group">
                     <label>Reviewed</label>
                     <div>
-                        <input type="radio" id="reviewedTrue" name="reviewed" value="True" {% if reviewed == 'True' %}checked{% endif %}>
+                        <input type="radio" id="reviewedTrue" name="reviewed" value="True" {% if reviewed == True %}checked{% endif %}>
                         <label for="reviewedTrue">True</label>
-                        <input type="radio" id="reviewedFalse" name="reviewed" value="False" {% if reviewed == 'False' %}checked{% endif %}>
+                        <input type="radio" id="reviewedFalse" name="reviewed" value="False" {% if reviewed == False %}checked{% endif %}>
                         <label for="reviewedFalse">False</label>
                     </div>
                 </div>
