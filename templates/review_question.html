@@ -81,8 +81,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="difficulty">Difficulty</label>
-                    <textarea id="difficulty" name="difficulty" class="form-control">{{difficulty}}</textarea>
+                    <label>Difficulty</label>
+                    <div>
+                        <input type="radio" id="easy" name="difficulty" value="easy" {% if difficulty == 'easy' %}checked{% endif %}>
+                        <label for="easy">Easy</label>
+
+                        <input type="radio" id="intermediate" name="difficulty" value="intermediate" {% if difficulty == 'intermediate' %}checked{% endif %}>
+                        <label for="intermediate">Intermediate</label>
+
+                        <input type="radio" id="hard" name="difficulty" value="hard" {% if difficulty == 'hard' %}checked{% endif %}>
+                        <label for="hard">Hard</label>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -126,9 +135,9 @@
 
                 <!-- Buttons -->
                 <div class="form-group">
-                    <button type="submit" name="button1" class="btn btn-success">Previous</button>
-                    <button type="submit" name="button2" class="btn btn-success">Next</button>
-                    <button type="submit" name="button3" class="btn btn-primary">Save</button>
+                    <button type="submit" name="button1" value="Previous" class="btn btn-success">Previous</button>
+                    <button type="submit" name="button2" value="Next" class="btn btn-success">Next</button>
+                    <button type="submit" name="button3" value="Save" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
