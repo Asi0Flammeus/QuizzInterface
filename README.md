@@ -19,7 +19,7 @@ A Flask web application that provides an interface to review and edit quiz quest
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/QuizzReviewInterface.git
+    git clone https://github.com/Asi0Flammeus/QuizzReviewInterface.git
     cd QuizzReviewInterface
     ```
 
