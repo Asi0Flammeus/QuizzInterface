@@ -14,7 +14,7 @@ def save_changes():
     with open(yaml_path, 'w') as w:
         new_data = {
             'course': request.form['course'],
-            'section': int(request.form['section']),
+            'part': int(request.form['part']),
             'chapter': int(request.form['chapter']),
             'difficulty': request.form['difficulty'],
             'duration': int(request.form.get('duration', '15')),
@@ -59,7 +59,7 @@ def index():
     return render_template('review_question.html',
                            QUESTION_INDEX=QUESTION_INDEX,
                            course=data['course'],
-                           section=data['section'],
+                           part=data['part'],
                            chapter=data['chapter'],
                            difficulty=data['difficulty'],
                            duration=int(data['duration']),
