@@ -1,162 +1,108 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <style>
-        body {
-            background-color: #292B61;
-            color: #ffffff;
-        }
-
-        .jumbotron {
-            background-color: #292B61;
-            border: 1px solid #DB7E21;
-        }
-
-        label {
-            color: #DB7E21
-        }
-
-        .btn-success {
-            background-color: #DB7E21;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: #1A055E;
-            border: 1px solid #DB7E21;
-            color: #DB7E21;
-        }
-
-        textarea.form-control {
-            background-color: #292B61;
-            color: #ffffff;
-            margin-bottom: 15px;
-            border: 1px solid #DB7E21;
-        }
-
-        textarea.form-control[readonly] {
-            background-color: #292B61 !important;
-        }
+      body { background-color: #292b61; color: #ffffff; }
+      .jumbotron { background-color: #292b61; border: 1px solid #db7e21; }
+      label { color: #db7e21; }
+      .btn-success { background-color: #db7e21; border: none; }
+      .btn-primary { background-color: #1a055e; border: 1px solid #db7e21; color: #db7e21; }
+      textarea.form-control {
+        background-color: #292b61;
+        color: #ffffff;
+        margin-bottom: 15px;
+        border: 1px solid #db7e21;
+      }
+      textarea.form-control[readonly] { background-color: #292b61 !important; }
     </style>
-
-    <title>Reviewed: {{reviewed}}</title>
-</head>
-
-<body>
+    <title>Question Review</title>
+  </head>
+  <body>
     <div class="container mt-5">
-        <div class="jumbotron">
-            <form method="post" action="/">
+      <div class="jumbotron">
+        <form method="post" action="/">
+          <div class="form-group">
+            <label for="author">Author</label>
+            <textarea id="author" name="author" class="form-control" readonly>{{- author -}}</textarea>
+          </div>
 
-                <div class="form-group">
-                    <label for="author">Author</label>
-                    <textarea id="author" name="author" class="form-control" readonly>{{author}}</textarea>
-                </div>
+          <div class="form-group">
+            <label for="chapterId">ChapterId</label>
+            <textarea id="chapterId" name="chapterId" class="form-control" readonly>{{- chapterId -}}</textarea>
+          </div>
 
-                <div class="form-group">
-                    <label for="course">Course</label>
-                    <textarea id="course" name="course" class="form-control" readonly>{{course}}</textarea>
-                </div>
+          <div class="form-group">
+            <label>Duration</label>
+            <div>
+              {%- for dur in [15, 30, 45] -%}
+              <input type="radio" id="duration{{ dur }}" name="duration" value="{{ dur }}" {% if duration == dur %}checked{% endif %}>
+              <label for="duration{{ dur }}">{{ dur }}</label>
+              {%- endfor -%}
+            </div>
+          </div>
 
-                <div class="form-group">
-                    <label for="part">Section</label>
-                    <textarea id="part" name="part" class="form-control" readonly>{{part}}</textarea>
-                </div>
+          <div class="form-group">
+            <label>Difficulty</label>
+            <div>
+              {%- for diff in ['easy', 'intermediate', 'hard'] -%}
+              <input type="radio" id="{{ diff }}" name="difficulty" value="{{ diff }}" {% if difficulty == diff %}checked{% endif %}>
+              <label for="{{ diff }}">{{ diff|title }}</label>
+              {%- endfor -%}
+            </div>
+          </div>
 
-                <div class="form-group">
-                    <label for="chapter">Chapter</label>
-                    <textarea id="chapter" name="chapter" class="form-control" readonly>{{chapter}}</textarea>
-                </div>
+          <div class="form-group">
+            <label>Tags</label>
+            {%- for tag in tags -%}
+            <textarea name="tag" class="form-control">{{- tag -}}</textarea>
+            {%- endfor -%}
+          </div>
 
-                <div class="form-group">
-                    <label>Duration</label>
-                    <div>
-                        <input type="radio" id="duration15" name="duration" value="15" {% if duration == 15 %}checked{% endif %}>
-                        <label for="duration15">15</label>
+          <div class="form-group">
+            <label for="question">Question {{ QUESTION_INDEX }}</label>
+            <textarea id="question" name="question" class="form-control">{{- question -}}</textarea>
+          </div>
 
-                        <input type="radio" id="duration30" name="duration" value="30" {% if duration == 30 %}checked{% endif %}>
-                        <label for="duration30">30</label>
+          <div class="form-group">
+            <label for="answer">Right Answer</label>
+            <textarea id="answer" name="answer" class="form-control">{{- answer -}}</textarea>
+          </div>
 
-                        <input type="radio" id="duration45" name="duration" value="45" {% if duration == 45 %}checked{% endif %}>
-                        <label for="duration45">45</label>
-                    </div>
-                </div>
+          <div class="form-group">
+            <label>Wrong Answers</label>
+            {%- for wrong_answer in wrong_answers -%}
+            <textarea name="wrong_answer" class="form-control">{{- wrong_answer -}}</textarea>
+            {%- endfor -%}
+          </div>
 
-                <div class="form-group">
-                    <label>Difficulty</label>
-                    <div>
-                        <input type="radio" id="easy" name="difficulty" value="easy" {% if difficulty == 'easy' %}checked{% endif %}>
-                        <label for="easy">Easy</label>
+          <div class="form-group">
+            <label for="explanation">Explanation</label>
+            <textarea id="explanation" name="explanation" class="form-control">{{- explanation -}}</textarea>
+          </div>
 
-                        <input type="radio" id="intermediate" name="difficulty" value="intermediate" {% if difficulty == 'intermediate' %}checked{% endif %}>
-                        <label for="intermediate">Intermediate</label>
+          <div class="form-group">
+            <label>Reviewed</label>
+            <div>
+              <input type="radio" id="reviewedTrue" name="reviewed" value="True" {% if reviewed %}checked{% endif %}>
+              <label for="reviewedTrue">True</label>
+              <input type="radio" id="reviewedFalse" name="reviewed" value="False" {% if not reviewed %}checked{% endif %}>
+              <label for="reviewedFalse">False</label>
+            </div>
+          </div>
 
-                        <input type="radio" id="hard" name="difficulty" value="hard" {% if difficulty == 'hard' %}checked{% endif %}>
-                        <label for="hard">Hard</label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="tags">Tags</label>
-                    {% for tag in tags %}
-                    <textarea id="tags" name="tag" class="form-control">{{tag}}</textarea>
-                    {% endfor %}
-                </div>
-
-                <div class="form-group">
-                    <label for="question">Question {{QUESTION_INDEX}}</label>
-                    <textarea id="question" name="question" class="form-control">{{question}}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="answer">Right Answer</label>
-                    <textarea id="answer" name="answer" class="form-control">{{answer}}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="wrong_answers">Wrong Answers</label>
-                    {% for wrong_answer in wrong_answers %}
-                    <textarea id="wrong_answers" name="wrong_answer" class="form-control">{{wrong_answer}}</textarea>
-                    {% endfor %}
-                </div>
-
-                <div class="form-group">
-                    <label for="explanation">Explanation</label>
-                    <textarea id="explanation" name="explanation" class="form-control">{{explanation}}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Reviewed</label>
-                    <div>
-                        <input type="radio" id="reviewedTrue" name="reviewed" value="True" {% if reviewed == True %}checked{% endif %}>
-                        <label for="reviewedTrue">True</label>
-                        <input type="radio" id="reviewedFalse" name="reviewed" value="False" {% if reviewed == False %}checked{% endif %}>
-                        <label for="reviewedFalse">False</label>
-                    </div>
-                </div>
-
-                <!-- Buttons -->
-                <div class="form-group">
-                    <button type="submit" name="button1" value="Previous" class="btn btn-success">Previous</button>
-                    <button type="submit" name="button2" value="Next" class="btn btn-success">Next</button>
-                    <button type="submit" name="button3" value="Save" class="btn btn-primary">Save</button>
-                </div>
-            </form>
-        </div>
+          <div class="form-group">
+            <button type="submit" name="button1" value="Previous" class="btn btn-success">Previous</button>
+            <button type="submit" name="button2" value="Next" class="btn btn-success">Next</button>
+            <button type="submit" name="button3" value="Save" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
-
